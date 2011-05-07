@@ -3,30 +3,12 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:gravity="center"
     >
     <TextView  
-        android:layout_width="fill_parent" 
-        android:layout_height="wrap_content" 
-        android:id="@+id/date"
-        android:textSize="48sp"
-        android:gravity="center" />
-    <TextView  
-        android:layout_width="fill_parent" 
-        android:layout_height="wrap_content" 
-        android:gravity="center"
-        android:id="@+id/dow"
-        android:textSize="48sp" />
-    <TextView  
-        android:layout_width="fill_parent" 
-        android:layout_height="wrap_content" 
-        android:gravity="center"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
         android:id="@+id/time"
-        android:textSize="48sp" />
-    <TextView  
-        android:layout_width="fill_parent" 
-        android:layout_height="wrap_content" 
-        android:gravity="center"
-        android:id="@+id/battery"
-        android:textSize="48sp" />
+        android:textSize="110sp" android:text="18:23"/>
 </LinearLayout>
 
