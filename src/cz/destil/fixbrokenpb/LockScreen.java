@@ -25,6 +25,7 @@ import java.util.Date;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.view.View;
@@ -41,8 +42,14 @@ public class LockScreen extends Activity implements View.OnClickListener {
         setContentView(R.layout.lock_screen);
         tm = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
         timeView = (TextView)findViewById(R.id.time);
-
     }
+    
+    public void turnOff(View view)
+    {
+    	startService(new Intent(this, LockScreenService.class));
+    	finish();
+    }
+    
     @Override
     public void onResume(){
         Date nd = Calendar.getInstance().getTime();

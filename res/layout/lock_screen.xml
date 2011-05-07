@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:gravity="center"
-    >
-    <TextView  
-        android:layout_width="wrap_content" 
-        android:layout_height="wrap_content"
-        android:id="@+id/time"
-        android:textSize="110sp" android:text="18:23"/>
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:gravity="center" android:layout_weight="1">
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/time"
+			android:textSize="70sp" android:text="18:23 PM" />
+	</LinearLayout>
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:gravity="center">
+		<ImageView android:src="@drawable/ic_launcher"
+			android:onClick="turnOff" android:layout_width="wrap_content"
+			android:layout_height="wrap_content"  android:layout_marginBottom="50dp"/>
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lockscreen_help" android:padding="10dp"/>	
+	</LinearLayout>
 </LinearLayout>
 
