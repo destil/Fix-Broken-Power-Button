@@ -17,18 +17,22 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
-package org.liberty.android.anyunlock;
+package cz.destil.fixbrokenpb;
 
-import java.util.UUID;
-import android.widget.*;
-import android.view.*;
-import android.app.*;
-import android.os.*;
-import android.util.Log;
-import android.content.*;
-import java.io.*;
-import android.provider.Settings;
+import android.app.KeyguardManager;
+import android.app.Service;
 import android.app.admin.DevicePolicyManager;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Binder;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.util.Log;
 
 
 public class AnyUnlockService extends Service{

@@ -17,15 +17,14 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
-package org.liberty.android.anyunlock;
+package cz.destil.fixbrokenpb;
 
-import android.app.*;
-import android.os.Bundle;
-import android.view.*;
-import android.widget.*;
-import android.content.*;
-import android.util.Log;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 public class LockScreenReceiver extends BroadcastReceiver{
     @Override

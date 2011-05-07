@@ -17,22 +17,21 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
-package org.liberty.android.anyunlock;
+package cz.destil.fixbrokenpb;
 
-import android.app.*;
-import android.os.Bundle;
-import android.view.*;
-import android.widget.*;
-import android.content.*;
-import android.os.SystemClock;
-import android.os.Handler;
-import android.telephony.*;
-import android.util.Log;
-
-import java.text.SimpleDateFormat;
 import java.text.DateFormat;
-import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
+import android.telephony.TelephonyManager;
+import android.view.View;
+import android.widget.TextView;
 
 
 public class LockScreen extends Activity implements View.OnClickListener {

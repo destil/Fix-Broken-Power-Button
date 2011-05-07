@@ -17,19 +17,15 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
-package org.liberty.android.anyunlock;
+package cz.destil.fixbrokenpb;
 
-import android.content.Intent;
-import android.content.Context;
-import android.content.BroadcastReceiver;
-import android.content.ComponentName;
-import android.util.Log;
-import android.widget.RemoteViews;
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
-import android.net.Uri;
-import java.util.Date;
-import android.app.PendingIntent;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.widget.RemoteViews;
 
 
 public class AnyUnlockWidgetProvider extends AppWidgetProvider{

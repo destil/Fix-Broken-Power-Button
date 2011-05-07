@@ -17,16 +17,13 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
-package org.liberty.android.anyunlock;
+package cz.destil.fixbrokenpb;
 
-import android.app.*;
-import android.os.Bundle;
-import android.view.*;
-import android.widget.*;
-import android.content.*;
-import android.util.Log;
-
+import android.app.Activity;
 import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.os.Bundle;
 
 
 public class AdminPermissionSet extends Activity {
