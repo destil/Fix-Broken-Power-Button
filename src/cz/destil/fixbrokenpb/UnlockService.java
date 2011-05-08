@@ -35,7 +35,7 @@ import android.os.RemoteException;
 import android.util.Log;
 
 
-public class AnyUnlockService extends Service{
+public class UnlockService extends Service{
     /* Magic number :D */
     private final int NOTIFY_ID = 0x994231;
     private static final String TAG = "AnyUnlockService";
@@ -75,6 +75,7 @@ public class AnyUnlockService extends Service{
                 Log.v("Hello", "Service onStartCommand");
                 Intent myIntent = new Intent(this, LockScreen.class);
                 myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                myIntent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(myIntent);
             }
             else if(intent.getAction().equals("anyunlock_power_off_intent")){

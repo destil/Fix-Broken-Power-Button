@@ -28,7 +28,7 @@ import android.content.Intent;
 import android.widget.RemoteViews;
 
 
-public class AnyUnlockWidgetProvider extends AppWidgetProvider{
+public class WidgetProvider extends AppWidgetProvider{
 
     private final static String TAG = "AnyUnlockWidgetProvider";
     private final int WIDGET_REQ = 0x7c539234;
@@ -52,7 +52,7 @@ public class AnyUnlockWidgetProvider extends AppWidgetProvider{
         for (int i=0; i<N; i++) {
             int appWidgetId = appWidgetIds[i];
             RemoteViews updateViews = new RemoteViews(context.getPackageName(), R.layout.widget);
-            ComponentName thisWidget = new ComponentName(context, AnyUnlockWidgetProvider.class);
+            ComponentName thisWidget = new ComponentName(context, WidgetProvider.class);
             AppWidgetManager manager = AppWidgetManager.getInstance(context);
             Intent myIntent = new Intent(context, LockScreenService.class);
             PendingIntent pendingIntent = PendingIntent.getService(context, WIDGET_REQ, myIntent, PendingIntent.FLAG_CANCEL_CURRENT);
