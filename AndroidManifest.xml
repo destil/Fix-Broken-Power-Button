@@ -15,8 +15,8 @@
 		</activity>
 		<activity android:name=".LockScreen" />
 		<activity android:name=".AdminPermissionSet" />
-		<activity android:name=".SettingsScreen" />
-		<service android:name="UnlockService" />
+		<activity android:name=".AboutActivity" />
+		<service android:name=".UnlockService" />
 		<service android:name=".LockScreenService" />
 		<receiver android:name=".AdminReceiver" android:label="AnyUnlock Admin"
 			android:permission="android.permission.BIND_DEVICE_ADMIN">

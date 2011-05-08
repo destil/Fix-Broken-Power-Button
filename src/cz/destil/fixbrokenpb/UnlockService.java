@@ -74,8 +74,8 @@ public class UnlockService extends Service{
             if(intent.getAction().equals("anyunlock_lockscreen_intent")){
                 Log.v("Hello", "Service onStartCommand");
                 Intent myIntent = new Intent(this, LockScreen.class);
-                myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                myIntent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                myIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(myIntent);
             }
             else if(intent.getAction().equals("anyunlock_power_off_intent")){

@@ -20,7 +20,6 @@ package cz.destil.fixbrokenpb;
 
 import android.app.Activity;
 import android.app.AlarmManager;
-import android.app.AlertDialog;
 import android.app.KeyguardManager;
 import android.app.PendingIntent;
 import android.app.admin.DevicePolicyManager;
@@ -40,11 +39,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.Toast;
 
 import com.markupartist.android.widget.ActionBar;
 
-public class SettingsActivity extends Activity {
+public class SettingsActivity extends Activity implements OnCheckedChangeListener {
 	private PendingIntent mAlarmSender;
 	private AlarmManager am;
 	private Handler mHandler;
@@ -77,6 +79,16 @@ public class SettingsActivity extends Activity {
 				button.setText(R.string.enable_23);
 			}
 		}
+		
+		CheckBox checkbox = (CheckBox) findViewById(R.id.enable_unlock_screen);
+		checkbox.setOnCheckedChangeListener(this);
+		checkbox.setChecked(settings.getBoolean("enable_unlock_screen", true));
+		checkbox.setPadding(
+		        checkbox.getPaddingLeft()
+                + (int) (7.0f * getResources()
+                        .getDisplayMetrics().density + 0.5f),
+        checkbox.getPaddingTop(), checkbox.getPaddingRight(),
+        checkbox.getPaddingBottom());
 
 		am = (AlarmManager) getSystemService(ALARM_SERVICE);
 		mAlarmSender = PendingIntent.getService(this, REQ_CODE, new Intent(
@@ -118,25 +130,14 @@ public class SettingsActivity extends Activity {
 
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.main_screen_menu, menu);
+		inflater.inflate(R.menu.main_menu, menu);
 		return true;
 	}
 
 	public boolean onOptionsItemSelected(MenuItem item) {
-		Intent myIntent = new Intent();
 		switch (item.getItemId()) {
-		case R.id.settings: {
-			myIntent.setClass(this, SettingsScreen.class);
-			startActivity(myIntent);
-			return true;
-		}
-
 		case R.id.about: {
-			new AlertDialog.Builder(this)
-			        .setTitle("About AnyUnlock")
-			        .setMessage(
-			                "AnyUnlock\nAuthor: Liberty (Haowen Ning)\nEmail: liberty@anymemo.org")
-			        .setPositiveButton("OK", null).show();
+			startActivity(new Intent(this, AboutActivity.class));
 			return true;
 		}
 		}
@@ -151,6 +152,11 @@ public class SettingsActivity extends Activity {
 		}
 		super.onResume();
 	}
+	
+	@Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+	    settings.edit().putBoolean("enable_unlock_screen", isChecked).commit();
+    }
 
 	private void enableAdmin() {
 		Intent myIntent = new Intent(this, AdminPermissionSet.class);

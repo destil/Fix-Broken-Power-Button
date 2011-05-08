@@ -8,4 +8,22 @@
     <string name="disable_23">Disable unlocking\nby VOLUME key</string>
     <string name="custom_unlocking_disabled">Custom unlocking disabled</string>
     <string name="custom_unlocking_enabled">Custom unlocking enabled</string>
+    <string name="disable_hint">Note: You need to disable this before uninstalling the app or in problems with entering PIN after start.</string>
+    <string name="enable_unlock_screen_hint">Simple unlock screen to prevent accidental key presses</string>
+    <string name="tip_1">Tip 1: Add widget to your desktop to quickly turn screen off</string>
+    <string name="tip_2">Tip 2: When your phone is turned off completely (e.g. battery dead), plug it in charger, wait till you see it\'s charging. Then remove and insert battery. Phone will turn on.</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+    <string name="rate_label">Like Fix Broken Power Button?</string>
+    <string name="rate_action">Rate it on Android Market</string>
+    <string name="mail_label">Problems, suggestions?</string>
+    <string name="mail_action">Send e-mail to author</string>
+    <string name="web_label">This app in opensource!</string>
+    <string name="web_action">Learn more</string>
+    <string name="created_by">Created by</string>
+    <string name="destil">David \"Destil\" Vavra</string>
+    <string name="based_on">Based on app AnyUnlock by</string>
+    <string name="liberty">Haowen \"Liberty\" Ning</string>
+    <string name="problem_report">Fix Broken Power Button problem report</string>
+	<string name="problem_report_body">What phone do you have?\n\nWhat doesn\'t work?\n\nWhat do you expect to see?\n\nPlease list steps how to reproduce your problem:\n\n</string>
 </resources>

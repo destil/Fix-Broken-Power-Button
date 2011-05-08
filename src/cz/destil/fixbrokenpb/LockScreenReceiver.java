@@ -34,7 +34,7 @@ public class LockScreenReceiver extends BroadcastReceiver{
         } else if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
             SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
 
-            if(settings.getBoolean("enable_lock_screen", true)){
+            if(settings.getBoolean("enable_unlock_screen", true)){
                 Intent myIntent = new Intent(context, UnlockService.class);
 
                 myIntent.setAction("anyunlock_lockscreen_intent");

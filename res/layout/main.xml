@@ -5,10 +5,18 @@
 	<com.markupartist.android.widget.ActionBar
 		android:id="@+id/actionbar" style="@style/ActionBar" />
 	<LinearLayout android:orientation="vertical"
-		android:layout_width="fill_parent" android:layout_height="wrap_content" android:padding="10dp" android:gravity="center_horizontal">
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:padding="10dp" android:gravity="center_horizontal">
 		<Button android:id="@+id/action_button" android:layout_width="wrap_content"
 			android:layout_height="wrap_content" android:padding="20dp"
 			android:onClick="buttonClicked" />
+		<TextView style="@style/TextView" android:text="@string/disable_hint" />
+		<CheckBox android:id="@+id/enable_unlock_screen"
+			android:text="@string/enable_unlock_screen_hint"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_marginTop="10dp" android:layout_marginBottom="10dp" />
+		<TextView style="@style/TextView" android:text="@string/tip_1" />
+		<TextView style="@style/TextView" android:text="@string/tip_2" />
 	</LinearLayout>
 </LinearLayout>
 
