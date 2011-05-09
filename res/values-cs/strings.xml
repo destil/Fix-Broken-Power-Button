@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fix Broken Power Button</string>
+    <string name="lockscreen_help">Stiskni ZPĚT pro odemčení obrazovky</string>
+    <string name="enable_22">Povolit odemykání\npomocí HLASITOSTi &amp; TRACKBALLu</string>
+    <string name="enable_23">Povolit odemykání\npomocí ovládání hlasitosti</string>
+    <string name="disable_22">Zakázat odemykání\npomocí HLASITOSTi &amp; TRACKBALLu</string>
+    <string name="disable_23">Zakázat odemykání\npomocí ovládání hlasitosti</string>
+    <string name="custom_unlocking_disabled">Upravené odemykání zakázáno</string>
+    <string name="custom_unlocking_enabled">Upravené odemykání povoleno</string>
+    <string name="disable_hint">Poznámka: Zakázání musíte provést před odinstalací aplikace nebo při problémech se zadáním PINu.</string>
+    <string name="enable_unlock_screen_hint">Jednoduchá odemykací obrazovka zabraňující nechtěným akcím</string>
+    <string name="tip_1">Tip 1: Přidejte si widget na plochu pro vypínání obrazovky</string>
+    <string name="tip_2">Tip 2: Pokud se Váš telefon vypne úplně (např. vybitá baterie), připojte ho do nabíječky a počkejte, až se baterie začne nabíjet. Baterii vyndejte a zandejte a telefon se zapne.</string>
+    <string name="settings">Nastavení</string>
+    <string name="about">O aplikaci</string>
+    <string name="rate_label">Líbí se Fix Broken Power Button?</string>
+    <string name="rate_action">Ohodnoťte na Android Marketu</string>
+    <string name="mail_label">Problémy, návrhy?</string>
+    <string name="mail_action">Pošlete e-mail autorovi</string>
+    <string name="web_label">Tato aplikace je opensource!</string>
+    <string name="web_action">Více zde</string>
+    <string name="created_by">Vytvořil</string>
+    <string name="destil">David \"Destil\" Vávra</string>
+    <string name="based_on">Založeno na aplikaci AnyUnlock od</string>
+    <string name="liberty">Haowen \"Liberty\" Ning</string>
+    <string name="problem_report">Fix Broken Power Button problém</string>
+	<string name="problem_report_body">Jaký máte telefon?\n\nCo nefunguje?\n\nCo čekáte, že se má stát?\n\nNapište seznam kroků, pomocí kterých jde problém zreprodukovat:\n\n</string>
+</resources>

@@ -3,7 +3,7 @@
     <string name="app_name">Fix Broken Power Button</string>
     <string name="lockscreen_help">Press BACK to unlock the screen</string>
     <string name="enable_22">Enable unlocking\nby VOLUME &amp; TRACKBALL</string>
-    <string name="enable_23">Enable unlocking\nbyVOLUME key</string>
+    <string name="enable_23">Enable unlocking\nby VOLUME key</string>
     <string name="disable_22">Disable unlocking\nby VOLUME &amp; TRACKBALL</string>
     <string name="disable_23">Disable unlocking\nby VOLUME key</string>
     <string name="custom_unlocking_disabled">Custom unlocking disabled</string>
