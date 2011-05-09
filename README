@@ -1,5 +1,10 @@
-Compile:
-$ android update project --target [target here] --path .
-$ ant debug
-$ adb install bin/*debug*.apk
+Do you have broken power button? This app can save your phone! You can unlock screen by other keys and lock screen using widget.
 
+Download from Market:
+https://market.android.com/details?id=cz.destil.fixbrokenpb
+
+Discussion:
+https://groups.google.com/forum/?hl=en#!forum/fix-broken-power-button
+
+This app is based on AnyUnlock, more here:
+https://github.com/helloworld1/AnyUnlock
