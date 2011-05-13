@@ -27,7 +27,6 @@ import android.os.Bundle;
 
 
 public class AdminPermissionSet extends Activity {
-    private static String TAG = "AdminPermissionSet";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
