@@ -34,13 +34,12 @@ import android.util.Log;
 public class LockScreenService extends Service{
     /* Magic number :D */
     private final int NOTIFY_ID = 0x9fe231;
-    private static final String TAG = "LockScreenService";
     private DevicePolicyManager mDPM;
     private ComponentName mAdminReceiver;
     
     @Override
     public void onCreate(){
-        Log.v(TAG, "LockScreenService Started!!!!");
+        Log.v("FBPB", "LockScreenService onCreate");
         mDPM = (DevicePolicyManager)getSystemService(Context.DEVICE_POLICY_SERVICE);
         mAdminReceiver = new ComponentName(this, AdminReceiver.class);
         if(mDPM.isAdminActive(mAdminReceiver)){

@@ -36,7 +36,7 @@ public class AdminPermissionSet extends Activity {
         myIntent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN,
                 mAdminReceiver);
         myIntent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION,
-                "AnyUnlock require this permission to turn off the phone without using power off button.");
+                getString(R.string.permission_explanation));
         startActivityForResult(myIntent, 18);
     }
 

@@ -25,6 +25,7 @@ import java.util.Date;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.view.Menu;
@@ -70,11 +71,15 @@ public class LockScreen extends Activity implements View.OnClickListener {
 
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.settings: {
+		case R.id.settings: 
 			startActivity(new Intent(this, SettingsActivity.class));
 			finish();
 			return true;
-		}
+			case R.id.donate:
+				Intent intent = new Intent(Intent.ACTION_VIEW,
+						Uri.parse("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PSHU456C862DQ"));
+				startActivity(intent);
+				return true;
 		}
 		return false;
 	}

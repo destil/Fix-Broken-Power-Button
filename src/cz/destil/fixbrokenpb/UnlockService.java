@@ -38,7 +38,6 @@ import android.util.Log;
 public class UnlockService extends Service{
     /* Magic number :D */
     private final int NOTIFY_ID = 0x994231;
-    private static final String TAG = "AnyUnlockService";
     private BroadcastReceiver mReceiver;
     private DevicePolicyManager mDPM;
     private ComponentName mAdminReceiver;
@@ -46,7 +45,7 @@ public class UnlockService extends Service{
     
     @Override
     public void onCreate(){
-        Log.v(TAG, "Service Started!!!!");
+        Log.v("FBPB", "UnlockService onCreate");
         IntentFilter filter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         filter.addAction("android.intent.action.PHONE_STATE");
@@ -58,7 +57,7 @@ public class UnlockService extends Service{
     }
 
     public void onDestroy(){
-        Log.v(TAG, "Service Destroyed!!!");
+    	Log.v("FBPB", "UnlockService onDestroy");
         KeyguardManager km = (KeyguardManager)getSystemService(Context.KEYGUARD_SERVICE);
         KeyguardManager.KeyguardLock kl = km.newKeyguardLock("AnyUnlock enable");
         kl.reenableKeyguard();
@@ -72,7 +71,7 @@ public class UnlockService extends Service{
          stopped, so return sticky.*/
         if(intent != null && intent.getAction() != null){
             if(intent.getAction().equals("anyunlock_lockscreen_intent")){
-                Log.v("Hello", "Service onStartCommand");
+            	Log.v("FBPB", "Starting unlock screen");
                 Intent myIntent = new Intent(this, LockScreen.class);
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);

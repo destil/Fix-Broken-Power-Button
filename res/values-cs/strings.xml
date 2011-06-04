@@ -26,4 +26,7 @@
     <string name="liberty">Haowen \"Liberty\" Ning</string>
     <string name="problem_report">Fix Broken Power Button problém</string>
 	<string name="problem_report_body">Jaký máte telefon?\n\nCo nefunguje?\n\nCo čekáte, že se má stát?\n\nNapište seznam kroků, pomocí kterých jde problém zreprodukovat:\n\n</string>
+	<string name="lock_screen">Zamknout obrazovku</string>
+	<string name="permission_explanation">FBPB potřebuje toto oprávnění, aby mohla zamykat obrazovku widgetem</string>
+	<string name="donate">Darovat</string>
 </resources>

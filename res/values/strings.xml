@@ -26,4 +26,7 @@
     <string name="liberty">Haowen \"Liberty\" Ning</string>
     <string name="problem_report">Fix Broken Power Button problem report</string>
 	<string name="problem_report_body">What phone do you have?\n\nWhat doesn\'t work?\n\nWhat do you expect to see?\n\nPlease list steps how to reproduce your problem:\n\n</string>
+	<string name="lock_screen">Lock screen</string>
+	<string name="permission_explanation">FBPB require this permission to turn off the phone without using power off button</string>
+	<string name="donate">Donate</string>
 </resources>

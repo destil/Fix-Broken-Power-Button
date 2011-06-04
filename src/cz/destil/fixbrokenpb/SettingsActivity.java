@@ -27,6 +27,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -46,7 +47,8 @@ import android.widget.Toast;
 
 import com.markupartist.android.widget.ActionBar;
 
-public class SettingsActivity extends Activity implements OnCheckedChangeListener {
+public class SettingsActivity extends Activity implements
+        OnCheckedChangeListener {
 	private PendingIntent mAlarmSender;
 	private AlarmManager am;
 	private Handler mHandler;
@@ -79,16 +81,15 @@ public class SettingsActivity extends Activity implements OnCheckedChangeListene
 				button.setText(R.string.enable_23);
 			}
 		}
-		
+
 		CheckBox checkbox = (CheckBox) findViewById(R.id.enable_unlock_screen);
 		checkbox.setOnCheckedChangeListener(this);
 		checkbox.setChecked(settings.getBoolean("enable_unlock_screen", true));
 		checkbox.setPadding(
 		        checkbox.getPaddingLeft()
-                + (int) (7.0f * getResources()
-                        .getDisplayMetrics().density + 0.5f),
-        checkbox.getPaddingTop(), checkbox.getPaddingRight(),
-        checkbox.getPaddingBottom());
+		                + (int) (7.0f * getResources().getDisplayMetrics().density + 0.5f),
+		        checkbox.getPaddingTop(), checkbox.getPaddingRight(),
+		        checkbox.getPaddingBottom());
 
 		am = (AlarmManager) getSystemService(ALARM_SERVICE);
 		mAlarmSender = PendingIntent.getService(this, REQ_CODE, new Intent(
@@ -98,7 +99,7 @@ public class SettingsActivity extends Activity implements OnCheckedChangeListene
 
 	public void buttonClicked(View view) {
 		if (settings.getBoolean("enabled", false)) {
-			//disable
+			// disable
 			settings.edit().putBoolean("enabled", false).commit();
 			Toast.makeText(this, R.string.custom_unlocking_disabled,
 			        Toast.LENGTH_SHORT).show();
@@ -111,14 +112,14 @@ public class SettingsActivity extends Activity implements OnCheckedChangeListene
 				}
 			}, 400);
 		} else {
-			//enable
+			// enable
 			settings.edit().putBoolean("enabled", true).commit();
 			long firstTime = SystemClock.elapsedRealtime();
 			am.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, firstTime,
 			        600 * 1000, mAlarmSender);
 			enableAdmin();
-			Toast.makeText(this, R.string.custom_unlocking_enabled, Toast.LENGTH_SHORT)
-			        .show();
+			Toast.makeText(this, R.string.custom_unlocking_enabled,
+			        Toast.LENGTH_SHORT).show();
 			Button button = (Button) findViewById(R.id.action_button);
 			if (Build.VERSION.SDK_INT == 8) {
 				button.setText(R.string.disable_22);
@@ -136,10 +137,16 @@ public class SettingsActivity extends Activity implements OnCheckedChangeListene
 
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.about: {
+		case R.id.about:
 			startActivity(new Intent(this, AboutActivity.class));
 			return true;
-		}
+
+		case R.id.donate:
+			Intent intent = new Intent(
+			        Intent.ACTION_VIEW,
+			        Uri.parse("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PSHU456C862DQ"));
+			startActivity(intent);
+			return true;
 		}
 		return false;
 	}
@@ -152,11 +159,11 @@ public class SettingsActivity extends Activity implements OnCheckedChangeListene
 		}
 		super.onResume();
 	}
-	
+
 	@Override
-    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-	    settings.edit().putBoolean("enable_unlock_screen", isChecked).commit();
-    }
+	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+		settings.edit().putBoolean("enable_unlock_screen", isChecked).commit();
+	}
 
 	private void enableAdmin() {
 		Intent myIntent = new Intent(this, AdminPermissionSet.class);
@@ -167,7 +174,8 @@ public class SettingsActivity extends Activity implements OnCheckedChangeListene
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == 18) {
 			KeyguardManager km = (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
-			KeyguardManager.KeyguardLock kl = km.newKeyguardLock("AnyUnlock");
+			KeyguardManager.KeyguardLock kl = km
+			        .newKeyguardLock(getString(R.string.app_name));
 			kl.disableKeyguard();
 
 		}
