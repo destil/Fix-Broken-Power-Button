@@ -15,6 +15,12 @@
 			</intent-filter>
 		</activity>
 		<activity android:name=".LockScreen" />
+		<activity android:name=".Lock">
+		    <intent-filter>
+		        <action android:name="android.intent.action.SEARCH_LONG_PRESS" />
+		        <category android:name="android.intent.category.DEFAULT" />
+		    </intent-filter>
+		</activity> 
 		<activity android:name=".AdminPermissionSet" />
 		<activity android:name=".AboutActivity" />
 		<service android:name=".UnlockService" />
