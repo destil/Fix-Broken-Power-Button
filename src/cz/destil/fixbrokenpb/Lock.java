@@ -18,27 +18,11 @@
  */
 package cz.destil.fixbrokenpb;
 
-//import java.text.DateFormat;
-//import java.util.Calendar;
-//import java.util.Date;
-
 import android.app.Activity;
-//import android.content.Context;
 import android.content.Intent;
-//import android.net.Uri;
 import android.os.Bundle;
-//import android.telephony.TelephonyManager;
-//import android.view.Menu;
-//import android.view.MenuInflater;
-//import android.view.MenuItem;
-//import android.view.View;
-//import android.widget.TextView;
 
 public class Lock extends Activity  {
-	//private DateFormat timeFormatter = DateFormat
-	        //.getTimeInstance(DateFormat.SHORT);
-	//private TelephonyManager tm;
-	//private TextView timeView;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -46,45 +30,5 @@ public class Lock extends Activity  {
 		startService(new Intent(this, LockScreenService.class));
 		finish();
 	}
-/*
-	public void turnOff(View view) {
-		startService(new Intent(this, LockScreenService.class));
-		finish();
-	}
-
-	@Override
-	public void onResume() {
-		Date nd = Calendar.getInstance().getTime();
-		timeView.setText(timeFormatter.format(nd));
-		if (tm.getCallState() != 0) {
-			finish();
-		}
-		super.onResume();
-	}
-
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.lock_screen_menu, menu);
-		return true;
-	}
-
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case R.id.settings: 
-			startActivity(new Intent(this, SettingsActivity.class));
-			finish();
-			return true;
-			case R.id.donate:
-				Intent intent = new Intent(Intent.ACTION_VIEW,
-						Uri.parse("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PSHU456C862DQ"));
-				startActivity(intent);
-				return true;
-		}
-		return false;
-	}
-
-	@Override
-	public void onClick(View v) {
-	}
-	*/
+	
 }
