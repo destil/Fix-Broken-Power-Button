@@ -19,6 +19,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 package cz.destil.fixbrokenpb;
 
+import java.util.Random;
+
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
@@ -31,7 +33,7 @@ import android.widget.RemoteViews;
 public class WidgetProvider extends AppWidgetProvider{
 
     private final static String TAG = "AnyUnlockWidgetProvider";
-    private final int WIDGET_REQ = 0x7c539234;
+    private static final Random RANDOM = new Random();
 
     @Override
     public void onEnabled(Context context){
@@ -55,7 +57,9 @@ public class WidgetProvider extends AppWidgetProvider{
             ComponentName thisWidget = new ComponentName(context, WidgetProvider.class);
             AppWidgetManager manager = AppWidgetManager.getInstance(context);
             Intent myIntent = new Intent(context, LockScreenService.class);
-            PendingIntent pendingIntent = PendingIntent.getService(context, WIDGET_REQ, myIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+            // need a random requestId so that multiple copies of the same app widget will all work
+            int randomRequestId = RANDOM.nextInt();
+            PendingIntent pendingIntent = PendingIntent.getService(context, randomRequestId, myIntent, PendingIntent.FLAG_CANCEL_CURRENT);
             updateViews.setOnClickPendingIntent(R.id.off_button, pendingIntent);
             appWidgetManager.updateAppWidget(appWidgetId, updateViews);
         }
