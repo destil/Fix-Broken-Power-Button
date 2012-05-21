@@ -37,6 +37,8 @@ import android.widget.TextView;
 public class LockScreen extends Activity implements View.OnClickListener {
 	private DateFormat timeFormatter = DateFormat
 	        .getTimeInstance(DateFormat.SHORT);
+	private DateFormat dateFormatter = DateFormat
+	        .getDateInstance(DateFormat.DEFAULT);
 	private TelephonyManager tm;
 	private TextView timeView;
 
@@ -57,6 +59,7 @@ public class LockScreen extends Activity implements View.OnClickListener {
 	public void onResume() {
 		Date nd = Calendar.getInstance().getTime();
 		timeView.setText(timeFormatter.format(nd));
+		((TextView)findViewById(R.id.date)).setText(dateFormatter.format(nd));
 		if (tm.getCallState() != 0) {
 			finish();
 		}

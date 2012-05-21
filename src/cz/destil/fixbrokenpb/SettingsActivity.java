@@ -20,11 +20,13 @@ package cz.destil.fixbrokenpb;
 
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.KeyguardManager;
 import android.app.PendingIntent;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -113,19 +115,29 @@ public class SettingsActivity extends Activity implements
 			}, 400);
 		} else {
 			// enable
-			settings.edit().putBoolean("enabled", true).commit();
-			long firstTime = SystemClock.elapsedRealtime();
-			am.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, firstTime,
-			        600 * 1000, mAlarmSender);
-			enableAdmin();
-			Toast.makeText(this, R.string.custom_unlocking_enabled,
-			        Toast.LENGTH_SHORT).show();
-			Button button = (Button) findViewById(R.id.action_button);
-			if (Build.VERSION.SDK_INT == 8) {
-				button.setText(R.string.disable_22);
-			} else {
-				button.setText(R.string.disable_23);
-			}
+			AlertDialog.Builder alert = new AlertDialog.Builder(this);
+			alert.setTitle(R.string.important);
+			alert.setMessage(R.string.need_to_be_disabled);
+			alert.setCancelable(true);
+			alert.setPositiveButton(R.string.i_understand,
+			        new DialogInterface.OnClickListener() {
+				        public void onClick(DialogInterface dialog, int which) {
+							settings.edit().putBoolean("enabled", true).commit();
+							long firstTime = SystemClock.elapsedRealtime();
+							am.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, firstTime,
+							        600 * 1000, mAlarmSender);
+							enableAdmin();
+							Toast.makeText(SettingsActivity.this, R.string.custom_unlocking_enabled,
+							        Toast.LENGTH_SHORT).show();
+							Button button = (Button) findViewById(R.id.action_button);
+							if (Build.VERSION.SDK_INT == 8) {
+								button.setText(R.string.disable_22);
+							} else {
+								button.setText(R.string.disable_23);
+							}
+				        }
+			        });
+			alert.show();
 		}
 	}
 

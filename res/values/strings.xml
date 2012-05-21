@@ -8,7 +8,7 @@
     <string name="disable_23">Disable unlocking\nby VOLUME key</string>
     <string name="custom_unlocking_disabled">Custom unlocking disabled</string>
     <string name="custom_unlocking_enabled">Custom unlocking enabled</string>
-    <string name="disable_hint">Note: You need to disable this before uninstalling the app or in problems with entering PIN after start.</string>
+    <string name="disable_hint">Note: You need to disable this in problems with entering PIN after start. Sometimes you need to do disable/enable after phone starts up.</string>
     <string name="enable_unlock_screen_hint">Simple unlock screen to prevent accidental key presses</string>
     <string name="tip_1">Tip 1: Add widget to your desktop to quickly turn screen off</string>
     <string name="tip_2">Tip 2: When your phone is turned off completely (e.g. battery dead), plug it in charger, wait till you see it\'s charging. Then remove and insert battery. Phone will turn on.</string>
@@ -29,4 +29,7 @@
 	<string name="lock_screen">Lock screen</string>
 	<string name="permission_explanation">FBPB require this permission to turn off the phone without using power off button</string>
 	<string name="donate">Donate</string>
+	<string name="important">Important</string>
+	<string name="need_to_be_disabled">This needs to be disabled before uninstalling</string>
+	<string name="i_understand">I understand</string>
 </resources>
